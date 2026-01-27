@@ -24,7 +24,75 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Modern Sports Auction</title>
+    <!-- Tailwind CSS v3 with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Custom Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              'deep-purple': '#0f0518',
+              'neon-cyan': '#00f0ff',
+              'neon-blue': '#2d5af0',
+              'panel-bg': 'rgba(15, 23, 42, 0.6)',
+            },
+            boxShadow: {
+              'neon': '0 0 5px #00f0ff, 0 0 10px #00f0ff',
+              'neon-soft': '0 0 2px #00f0ff, 0 0 5px rgba(0, 240, 255, 0.5)',
+              'card-glow': '0 0 15px rgba(0, 240, 255, 0.3)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background: radial-gradient(circle at center, #1a0b2e 0%, #05020a 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      /* Scrollbar styling */
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      /* Glassmorphism panel base */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid #00f7ff;
+        border-radius: 0.75rem;
+        box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+      }
+
+      /* 3D Card Effect */
+      .player-card-container { perspective: 1000px; }
+      .player-card {
+        background: linear-gradient(145deg, #1a2c38, #0f1821);
+        border: 2px solid #00f0ff;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 20px rgba(0, 240, 255, 0.1);
+        transform: rotateY(0deg);
+        transition: transform 0.5s;
+      }
+      
+      /* Bidding Console Shape */
+      .bidding-console {
+        background: rgba(0, 0, 0, 0.6);
+        border: 2px solid #00f0ff;
+        border-radius: 2rem;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+        position: relative;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
